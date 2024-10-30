@@ -10,13 +10,8 @@ const jwtConfig = {
 };
 
 const createUser = async (req, res) => {
-  const { displayName, email, password, image } = req.body;
-  const response = await signUpService.createUser(
-    displayName,
-    email,
-    password,
-    image,
-  );
+  const { userName, email, password } = req.body;
+  const response = await signUpService.createUser(userName, email, password);
   if (!response) {
     return res.status(409).json({ message: "User already registered" });
   }
