@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       //futuras associações
     }
   }
+
   User.init(
     {
       userName: {

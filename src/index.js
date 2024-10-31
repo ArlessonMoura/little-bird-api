@@ -1,7 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 
-const userRouters = require("./routers/userRouter");
+const signUpRouter = require("./routers/signUpRouter");
 
 const app = express();
 app.use(express.json());
@@ -11,6 +11,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-app.use("/user", userRouters);
+app.use("/user", signUpRouter);
 
 module.exports = app;

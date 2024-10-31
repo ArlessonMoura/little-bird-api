@@ -1,6 +1,15 @@
 const router = require("express").Router();
-const { createUser } = require("../controllers");
+const { createUser } = require("../controllers/signUpController");
+const middlewares = require("../middleware");
 
-router.post("/", createUser);
+// validateEmail validatePassword
+
+router.post(
+  "/",
+  middlewares.nameCheck,
+  middlewares.emailCheck,
+  middlewares.passwordCheck,
+  createUser,
+);
 
 module.exports = router;
