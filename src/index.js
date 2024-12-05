@@ -1,7 +1,7 @@
-const express = require("express");
-require("dotenv").config();
+const express = require('express');
+require('dotenv').config();
 
-const signUpRouter = require("./routers/signUpRouter");
+const signUpRouter = require('./routers/signUpRouter');
 
 const app = express();
 app.use(express.json());
@@ -11,6 +11,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-app.use("/user", signUpRouter);
+// exemplo para jera
+
+app.use('/user', signUpRouter);
 
 module.exports = app;
